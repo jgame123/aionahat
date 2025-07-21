@@ -26,6 +26,10 @@ def listen_and_transcribe(model):
     stream.start_stream()  # Begins the audio stream 
 
     print("Listening... Speak now.")
+    engine = pyttsx3.init()
+    engine.say("What is your prompt?")
+    engine.runAndWait()
+    time.sleep(0.7)
     while True:
         data = stream.read(4096) # Reads 4096 bytes of audio data (half of the buffer size)
         if rec.AcceptWaveform(data):   #Processes the audio chunk Returns True if the audio chunk is sufficient
