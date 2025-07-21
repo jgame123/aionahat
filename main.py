@@ -45,14 +45,7 @@ def query_ollama(input_text):
     with open("output.txt", "w") as file:
         file.write(result)
 
-# Convert Ollama's response to speech
-def speak_text():
-    engine = pyttsx3.init()
-    with open("output.txt", "r") as file:
-        text = file.read()  # This function initializes the text-to-speech engine
-    engine.say(text) #The say() method takes the string passed as an argument (in this case, text) and adds it to the speech queue.
-    engine.runAndWait()
-    time.sleep(1) #tells the engine to start processing the queued text and actually speak it out loud.
+
 
 # Main function to integrate all components
 def main():
